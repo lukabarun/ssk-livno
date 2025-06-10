@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>O Nama - SSK Livno</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-left: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+      transition: color 0.3s;
+      padding: 0.4rem 0;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    .contact-button {
+      background-color: red;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: white;
+      height: 90vh;
+      background-image: url('SSK3.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin: 0.2rem 0;
+    }
+
+    .hero h3 {
+      font-size: 1.5rem;
+      margin: 0.2rem 0;
+      color: #ddd;
+    }
+
+    .hero .button {
+      margin-top: 2rem;
+      background-color: red;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .stats-projects {
+      padding: 3rem 2rem;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 7rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: red;
+    }
+
+    .stat-label {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    .project {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 0;
+    }
+
+    .project-image {
+      width: 50%;
+      display: block;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .project-content {
+      width: 50%;
+      text-align: left;
+    }
+
+    .project-content h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-content p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .project-content .button {
+      background-color: #b22222;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.1rem;
+    }
+
+    .natjecaji {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .natjecaji h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .natjecaji .button {
+      background-color: #b22222;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .natjecaji img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .uprava {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background-color: #1a2526;
+      text-align: center;
+      color: white;
+    }
+
+    .uprava h2 {
+      font-size: 2.5rem;
+      color: white;
+      margin: 0;
+    }
+
+    .uprava .button {
+      background-color: #b22222;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .uprava img {
+      max-width: 50%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .dnevne-aktivnosti {
+      padding: 3rem 2rem;
+      background-color: #fff;
+      text-align: center;
+      position: relative;
+    }
+
+    .dnevne-aktivnosti h2 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .dnevne-aktivnosti p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid #1e3a8a;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .onama-section {
+      background-color: #f5f5f5;
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      min-height: 80vh;
+    }
+
+    .onama-section h1 {
+      font-size: 5rem;
+      color: #2d3748;
+      margin: 0 0 2rem 0;
+      font-weight: bold;
+      position: relative;
+      z-index: 1;
+    }
+
+    .onama-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .onama-shapes div {
+      position: absolute;
+      background-color: #2d3748;
+    }
+
+    .onama-shapes .shape1 {
+      width: 50px;
+      height: 50px;
+      top: 5%;
+      left: 5%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    .onama-shapes .shape2 {
+      width: 30px;
+      height: 30px;
+      top: 10%;
+      right: 10%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    .onama-shapes .shape3 {
+      width: 40px;
+      height: 40px;
+      bottom: 5%;
+      left: 15%;
+      background-color: #4a5568;
+      border-radius: 50%;
+    }
+
+    .onama-shapes .shape4 {
+      width: 20px;
+      height: 20px;
+      bottom: 10%;
+      right: 5%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    .onama-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .onama-content img {
+      max-width: 40%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .onama-content p {
+      font-size: 1.1rem;
+      color: #333;
+      max-width: 50%;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="ssklivno_logo_2022.png" alt="SSK Logo" />
+    </div>
+    <nav>
+      <a href="index.html">POČETNA</a>
+      <a href="Onama.html">O NAMA</a>
+      <a href="Uprava.html">UPRAVA</a>
+      <a href="Projekti.html">PROJEKTI</a>
+      <a href="Natjecajiiobjave.html">NATJEČAJI I OBJAVE</a>
+      <a href="https://gothru.co/PmiL0KxRr?index=scene_0&hlookat=0&vlookat=0&fov=120">SSK 360</a>
+      <a class="contact-button" href="Kontakti.html">KONTAKTI</a>
+    </nav>
+  </header>
+
+  <section class="onama-section">
+    <div class="onama-shapes">
+      <div class="shape1"></div>
+      <div class="shape2"></div>
+      <div class="shape3"></div>
+      <div class="shape4"></div>
+    </div>
+    <h1>O nama</h1>
+    <div class="onama-content">
+      <img src="narodna sk.jpg" alt="Narodna škola Livno">
+      <p>
+        Srednja strukovna škola Silvija Strahimira Kranjčevića je odavno-obrazovna ustanova koja omogućuje učenje i osposobljavanje srednje škole uz prema od tri ili četri godine te dokvalifikaciju i prekvalifikaciju od tri mjeseca. Škola se nalazi u Livnu od najstarijih zgrada u gradu Livno. Glavna zgrada je sagrađena davne 1886. i od svoga izgradnje služi je kao odavno-obrazovna ustanova. Godine 1974. dograđeno je zapadno krilo uz staru zgradu. Sjeverna zgrada sagrađena je 1965. i dugo je služila učenicima daka dom kao spavaonica. Ostale pomoćne zgrade podignute su u razdoblju od 1971. do 1973., a športska dvorana 1976. godine.
+      </p>
+    </div>
+  </section>
+</body>
+</html>
